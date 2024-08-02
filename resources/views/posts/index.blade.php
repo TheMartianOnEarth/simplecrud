@@ -19,6 +19,8 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
       </div>
     </div>
   </nav>
+
+  
   <div class="container mt-5">
     <div class="row">
       @foreach ($posts as $post)
@@ -36,6 +38,13 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
                   <a href="{{ route('posts.edit', $post->id) }}"
             class="btn btn-primary btn-sm">Edit</a>
                 </div>
+
+                <div class="col-sm">
+                  <a href="{{ route('posts.show', $post->id) }}"
+            class="btn btn-success btn-sm">Show</a>
+                </div>
+
+
                 <div class="col-sm">
                     <form action="{{ route('posts.destroy', $post->id) }}" method="post">
                       @csrf
